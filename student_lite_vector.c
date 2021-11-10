@@ -4,11 +4,10 @@
 #include <string.h>
 
 lite_vector* lv_new_vec(size_t type_size){
-	lite_vector vector = malloc(type_size);
-	vector -> length = 0;
+	lite_vector *vector = malloc(type_size);
 	vector -> max_capacity = 8;
 	vector -> type_size;
-	vector -> data;
+	vector -> data = malloc(sizeof(void *) * 8);
 	return vector;
 
 }
@@ -18,7 +17,7 @@ lite_vector* lv_new_vec(size_t type_size){
 
 
 size_t lv_get_length(lite_vector* vec){
-	return vec -> lenght;
+	return vec -> length;
 }
 
 bool lv_clear(lite_vector* vec){
@@ -31,6 +30,9 @@ void* lv_get(lite_vector* vec, size_t index){
 }
 
 static bool lv_resize(lite_vector* vec){
+	//vec -> max_capacity;
+
+	free(vec);
 	return 1;
 }
 
