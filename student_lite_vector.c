@@ -30,7 +30,7 @@ void* lv_get(lite_vector* vec, size_t index){
 }
 
 static bool lv_resize(lite_vector* vec){
-	//vec -> max_capacity;
+	vec -> max_capacity;
 
 	free(vec);
 	return 1;
